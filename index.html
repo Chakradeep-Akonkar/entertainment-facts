@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Entertainment Facts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #007BFF, #00BFFF);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #0056b3, #0099cc);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Entertainment Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "The First Movie Theater",
+                "description": "The first dedicated movie theater, the Nickelodeon, opened in Pittsburgh in 1905, charging just five cents for admission."
+            },
+            {
+                "fact": "The Birth of Reality TV",
+                "description": "The first reality TV show, 'An American Family,' aired in 1973 and followed the lives of the Loud family, paving the way for the genre's explosion in the 2000s."
+            },
+            {
+                "fact": "The Most Expensive Music Video",
+                "description": "The music video for Michael Jackson's 'Scream,' released in 1995, is the most expensive ever made, costing around $7 million."
+            },
+            {
+                "fact": "The First Video Game",
+                "description": "The first commercially successful video game was 'Pong,' released by Atari in 1972, which helped kickstart the video game industry."
+            },
+            {
+                "fact": "The Longest-Running TV Show",
+                "description": "'The Simpsons,' which premiered in 1989, holds the record for the longest-running scripted primetime television series in the U.S."
+            },
+            {
+                "fact": "The First Oscar Ceremony",
+                "description": "The first Academy Awards ceremony took place in 1929 and honored films from 1927 to 1928, with only 12 categories."
+            },
+            {
+                "fact": "The Most-Watched TV Event",
+                "description": "The Super Bowl is consistently the most-watched television event in the United States, with over 100 million viewers tuning in each year."
+            },
+            {
+                "fact": "The Rise of Streaming",
+                "description": "Netflix, which started as a DVD rental service in 1997, has transformed into a major player in the entertainment industry, producing original content and streaming films and series worldwide."
+            },
+            {
+                "fact": "The First Animated Feature Film",
+                "description": "Disney's 'Snow White and the Seven Dwarfs,' released in 1937, was the first-ever full-length animated feature film and became a massive success."
+            },
+            {
+                "fact": "The Influence of Social Media",
+                "description": "Platforms like TikTok and Instagram have changed the landscape of entertainment, allowing creators to reach millions and launch careers without traditional media backing."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const selectedFact = facts[randomIndex];
+            document.getElementById('fact').innerText = `${selectedFact.fact}: ${selectedFact.description}`;
+        });
+    </script>
+</body>
+</html>
